@@ -5,7 +5,8 @@ RSpec.describe Controls do
   controls = Controls.new('player1', 'player2')
 
   describe '#win?' do
-    it 'returns true if players moves has a subset of one of the win sets' do
+    it 'returns true if player moves has a subset of one of the win sets '\
+        'and false if there is non' do
       expect(controls.win?([1, 2, 3])).to eql(true)
       expect(controls.win?([1, 4, 2, 3])).to eql(true)
       expect(controls.win?([2, 3])).to eql(false)
