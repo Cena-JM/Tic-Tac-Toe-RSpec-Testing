@@ -3,13 +3,11 @@ require_relative './../lib/board'
 
 RSpec.describe Board do
   board = Board.new
-  position1 = board.board[0]
 
   describe '#board_update' do
     it "Position value is turned to 'X' for player1 and 'O' for player2 " do
       board.board_update(1, 'X')
-      position1 = board.board[0]
-      expect(position1).to eql('X')
+      expect(board.board[0]).to eql('X')
 
       board.board_update(2, 'O')
       expect(board.board[1]).to eql('O')
