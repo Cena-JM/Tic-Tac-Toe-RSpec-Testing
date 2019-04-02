@@ -19,4 +19,12 @@ RSpec.describe Board do
       expect(board.board[i]).to eql('O')
     end
   end
+
+  describe '#available_positions' do
+    it 'check if the selected spot is available'
+    board.available_positions(1)
+    pos2 = board.board[1]
+    expect(pos2).to eql(true)
+  end
+
 end
