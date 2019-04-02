@@ -1,4 +1,5 @@
-require './lib/board.rb'
+require 'set'
+require_relative './../lib/board'
 
 RSpec.describe Board do
   board = Board.new
@@ -21,10 +22,10 @@ RSpec.describe Board do
   end
 
   describe '#available_positions' do
-    it 'check if the selected spot is available'
-    board.available_positions(1)
-    pos2 = board.board[1]
-    expect(pos2).to eql(true)
+    it 'check if the selected spot is available' do
+      expect(board.available_positions(1)).to eql(false)
+      expect(board.available_positions(2)).to eql(false)
+      expect(board.available_positions(3)).to eql(true)
+    end
   end
-
 end
